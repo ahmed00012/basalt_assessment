@@ -1,16 +1,10 @@
-# basalt_assessment
 
-A new Flutter project.
+this app uses http://api.marketstack.com/v1/tickers
+with specific parameters as i got from the mail, like 10 random companies i picked them, search parameter you can use search field to try it and finally dateFrom dateTo
+to specify the date range.
+you didn't mention anything about which specific api to use but i read the documentation of marketstack and got some info that helped me to build this result.
+and also you didn't spicify the design so i made the app by simple ui design.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

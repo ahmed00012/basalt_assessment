@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:basalt_assessment/reports_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -55,13 +56,15 @@ bool connected = true;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return
+      OverlaySupport.global(
+        child:MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home:connected? Reports():OfflineScreen(),
-    );
+    ));
   }
 }
 

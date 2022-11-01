@@ -13,6 +13,7 @@ class DataRepo extends DataRepository{
       var response = await http.get(Uri.parse('http://api.marketstack.com/v1/tickers?access_key=5e0ba68295248fd1d81f1ac8d0bccc1d&'
           'date_from=${dateFrom??''}& date_to=${dateTo??''}&symbols=AAPL,MSFT,GOOGL,BABA,FB,VOD,JPM,TSM,INTC,DIS&search${search??''}'
           ));
+      //,MSFT,GOOGL,BABA,FB,VOD,JPM,TSM,INTC,DIS
 
       var data = json.decode(response.body);
       print(data);

@@ -38,6 +38,7 @@ dependencies:
   http: ^0.13.5
   syncfusion_flutter_datepicker: ^20.3.52
   internet_connection_checker:
+  overlay_support: ^1.2.1
 
 
 dev_dependencies:

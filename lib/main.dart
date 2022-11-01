@@ -60,6 +60,7 @@ bool connected = true;
       OverlaySupport.global(
         child:MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

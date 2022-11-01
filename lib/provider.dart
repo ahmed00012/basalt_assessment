@@ -12,9 +12,8 @@ ChangeNotifierProvider.autoDispose<DataProvider>((ref) => DataProvider());
 class DataProvider extends ChangeNotifier {
   DataRepo dataRepo = DataRepo();
   List<DataModel> data  = [];
+  String? searchText = '';
 
-
-  bool status = true;
 
 
 DataProvider(){
@@ -62,6 +61,13 @@ DataProvider(){
   }
     notifyListeners();
   }
+
+
+  search(String text){
+  searchText = text ;
+  notifyListeners();
+
+}
 
 
 

@@ -38,15 +38,15 @@ class Reports extends ConsumerWidget {
               child: TextFormField(
 
                   onChanged: (value){
-                    // homeController.searchExpected(value);
+                   controller.search(value);
                   },
 
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     suffixIcon:  InkWell(
                       onTap: (){
-                        controller.getData(search: search.text);
-                        search.text='';
+                        controller.getData(search: controller.searchText);
+
                       },
                       child: Container(
                         width: 40,
@@ -63,17 +63,19 @@ class Reports extends ConsumerWidget {
                       ),
                     ),
 
-                    hintText: '  Search By Name Or Symbol',
+                    hintText: '  Search By Symbol',
                     hintStyle: TextStyle(color: Colors.black26),
 
 
 
                   ),
                   onEditingComplete: (){
-                    controller.getData(search: search.text);
-                    search.text='';
+                    // print(controller.searchText);
+                    controller.getData(search: controller.searchText);
+
                   },
-                  enableInteractiveSelection:false
+
+
 
               ),
             ),
@@ -95,9 +97,6 @@ class Reports extends ConsumerWidget {
                dateTo:  dateController.selectedRange!.endDate.toString().substring(0,10),);
           },
 
-          // endRangeSelectionColor: Colors.black,
-          // startRangeSelectionColor: Colors.black,
-          // rangeSelectionColor: Colors.black12,
           backgroundColor: Colors.white,
           showActionButtons: true,
 

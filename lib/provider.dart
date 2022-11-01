@@ -1,5 +1,8 @@
 
+import 'dart:async';
+
 import 'package:basalt_assessment/data_repository.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,6 +14,8 @@ class DataProvider extends ChangeNotifier {
   DataRepo dataRepo = DataRepo();
   List<DataModel> data  = [];
 
+
+  bool status = true;
 
 
 DataProvider(){
@@ -35,30 +40,6 @@ DataProvider(){
     notifyListeners();
   }
 
-  Future pickDateRange(BuildContext context) async {
-    await showDateRangePicker(
-      context: context,
-      // initialDateRange: dateRange,
-      firstDate: DateTime(2005),
-      lastDate: DateTime.now(),
-      builder: (context, child) {
-        return Theme(
-          data: Theme.of(context).copyWith(
-            colorScheme: ColorScheme.light(
-              primary: Colors.black,
-            ),
-          ),
-          child: Container(
-            height: 200,
-            width: 200,
-            child: child!,
-          ),
-        );
-      },
-
-    ).then((value) => print(value.toString()));
-
-  }
 
 
 }

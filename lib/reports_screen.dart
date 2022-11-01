@@ -105,70 +105,68 @@ class Reports extends ConsumerWidget {
       ),
 
           SizedBox(height: height*0.08,),
-          Expanded(
-            child:   SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Table(
-                  border: TableBorder.symmetric(inside: BorderSide(width: 1)),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Table(
+                border: TableBorder.symmetric(inside: BorderSide(width: 1)),
 
 
-                  columnWidths: const <int, TableColumnWidth>{
-                    0: IntrinsicColumnWidth(),
-                    1: IntrinsicColumnWidth(),
-                    2: IntrinsicColumnWidth(),
-                    3: IntrinsicColumnWidth(),
-                    4: IntrinsicColumnWidth(),
-                    // 1: FlexColumnWidth(),
-                    // 2: FlexColumnWidth(64),
-                  },
+                columnWidths: const <int, TableColumnWidth>{
+                  0: IntrinsicColumnWidth(),
+                  1: IntrinsicColumnWidth(),
+                  2: IntrinsicColumnWidth(),
+                  3: IntrinsicColumnWidth(),
+                  4: IntrinsicColumnWidth(),
+                  // 1: FlexColumnWidth(),
+                  // 2: FlexColumnWidth(64),
+                },
 
 
-                  children: controller.data.map((e) {
-                    int i = controller.data.indexOf(e);
-                    return TableRow(
-                        children: [
-                          Container(
+                children: controller.data.map((e) {
+                  int i = controller.data.indexOf(e);
+                  return TableRow(
+                      children: [
+                        Container(
+                          height: height*0.07,
+                          color: i==0||i%2==0?Colors.black12:Colors.white,
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Center(child: Text(e.symbol!,style: TextStyle(
+                              fontWeight:i==0? FontWeight.bold:FontWeight.normal
+                          ),)),
+                        ),
+                        Container(
+                          height: height*0.07,
+                          color: i==0||i%2==0?Colors.black12:Colors.white,
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Center(child: Text(e.name!,style: TextStyle(
+                              fontWeight:i==0? FontWeight.bold:FontWeight.normal
+                          ),)),
+                        ),
+                        Container(
                             height: height*0.07,
                             color: i==0||i%2==0?Colors.black12:Colors.white,
                             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                            child: Center(child: Text(e.symbol!,style: TextStyle(
+                            child: Center(child: Text(e.stockExchange!.name!,style: TextStyle(
                                 fontWeight:i==0? FontWeight.bold:FontWeight.normal
-                            ),)),
-                          ),
-                          Container(
+                            ),))),
+                        Container(
                             height: height*0.07,
                             color: i==0||i%2==0?Colors.black12:Colors.white,
                             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                            child: Center(child: Text(e.name!,style: TextStyle(
+                            child: Center(child: Text(e.stockExchange!.mic!,style: TextStyle(
                                 fontWeight:i==0? FontWeight.bold:FontWeight.normal
-                            ),)),
-                          ),
-                          Container(
-                              height: height*0.07,
-                              color: i==0||i%2==0?Colors.black12:Colors.white,
-                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                              child: Center(child: Text(e.stockExchange!.name!,style: TextStyle(
-                                  fontWeight:i==0? FontWeight.bold:FontWeight.normal
-                              ),))),
-                          Container(
-                              height: height*0.07,
-                              color: i==0||i%2==0?Colors.black12:Colors.white,
-                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                              child: Center(child: Text(e.stockExchange!.mic!,style: TextStyle(
-                                  fontWeight:i==0? FontWeight.bold:FontWeight.normal
-                              ),))),
-                          Container(
-                              height: height*0.07,
-                              color: i==0||i%2==0?Colors.black12:Colors.white,
-                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                              child: Center(child: Text(e.stockExchange!.country!,style: TextStyle(
-                                  fontWeight:i==0? FontWeight.bold:FontWeight.normal
-                              ),))),
-                        ]
-                    );
-                  }).toList()
+                            ),))),
+                        Container(
+                            height: height*0.07,
+                            color: i==0||i%2==0?Colors.black12:Colors.white,
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: Center(child: Text(e.stockExchange!.country!,style: TextStyle(
+                                fontWeight:i==0? FontWeight.bold:FontWeight.normal
+                            ),))),
+                      ]
+                  );
+                }).toList()
 
-              ),
             ),
           ),
         ],

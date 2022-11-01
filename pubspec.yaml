@@ -37,7 +37,8 @@ dependencies:
   flutter_riverpod: 2.0.0-dev.0
   http: ^0.13.5
   syncfusion_flutter_datepicker: ^20.3.52
-  intl: ^0.17.0
+  connectivity_plus:
+  internet_connection_checker:
 
 
 dev_dependencies:
